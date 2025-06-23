@@ -1,23 +1,24 @@
 # Direct WhatsApp Chat
 
-Chat ke nomor WhatsApp tanpa perlu menyimpan nomor kontak. Simple, modern, dan responsive.
+A simple, modern, and responsive web app to chat directly to any WhatsApp number without saving it to your contacts.
 
-## Fitur
-- Input nomor WhatsApp (otomatis validasi)
-- Langsung buka chat WhatsApp tanpa simpan nomor
-- UI/UX modern dan responsive (TailwindCSS)
+## Features
+- Instantly open WhatsApp chat to any number
+- Clean, attractive, and fully responsive UI (TailwindCSS)
+- Input validation for phone numbers
+- No installation or login required
 
-## Cara Pakai
-1. Masukkan nomor WhatsApp (format: 628xxx atau 08xxx)
-2. Klik "Mulai Chat"
-3. Akan diarahkan ke WhatsApp Web atau aplikasi WhatsApp
+## How to Use
+1. Enter the WhatsApp number (format: 628xxx or 08xxx)
+2. Click **Start Chat**
+3. You will be redirected to WhatsApp Web or the WhatsApp app
 
-## Deploy ke GitHub Pages
-1. Fork/clone repo ini
-2. Push ke branch `main` di GitHub
-3. Buka Settings > Pages > Source: pilih `main` dan folder `/root`
-4. Akses web Anda di `https://username.github.io/nama-repo`
+## Deploy to GitHub Pages
+1. Fork or clone this repository
+2. Push to your `main` branch on GitHub
+3. Go to **Settings > Pages** and set source to `main` branch, `/root` folder
+4. Your site will be live at `https://username.github.io/repo-name`
 
 ---
 
-Made with ❤️ by [Your Name] 
+**Made by [Haris Ratno Pambudi](https://harisratnopambudi.github.io/portfolio/)** 
