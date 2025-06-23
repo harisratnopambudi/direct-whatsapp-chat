@@ -21,12 +21,16 @@
           },
           animation: {
             'fade-in-up': 'fadeInUp 1s cubic-bezier(.23,1.01,.32,1) both',
+            'spin-slow': 'spin 18s linear infinite',
           },
           keyframes: {
             fadeInUp: {
               '0%': { opacity: '0', transform: 'translateY(40px)' },
               '100%': { opacity: '1', transform: 'none' },
             },
+          },
+          textGradient: {
+            'wa': 'linear-gradient(90deg, #25D366 0%, #128C7E 100%)',
           },
         },
       },
@@ -36,19 +40,25 @@
 <body class="bg-gradient-to-br from-green-200 via-white to-green-100 min-h-screen flex items-center justify-center relative overflow-hidden font-poppins">
   <div class="fixed right-8 bottom-8 opacity-10 w-64 h-64 bg-wa-watermark bg-no-repeat bg-contain pointer-events-none select-none z-0"></div>
   <div class="relative z-10 w-full max-w-md mx-auto p-1 bg-gradient-to-tr from-whatsapp to-whatsappDark rounded-3xl shadow-2xl">
-    <div class="bg-white/80 backdrop-blur-lg rounded-3xl p-8 flex flex-col items-center border border-white/30 animate-fade-in-up">
+    <div class="relative group bg-white/80 backdrop-blur-2xl rounded-3xl p-12 flex flex-col items-center border-2 border-white/60 animate-fade-in-up transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl shadow-2xl">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="w-16 h-16 mb-4 drop-shadow-lg animate-bounce">
-      <h1 class="text-3xl font-extrabold text-whatsappDark mb-2 text-center tracking-tight">Direct WhatsApp Chat</h1>
-      <p class="text-gray-600 mb-6 text-center">Chat ke nomor WhatsApp tanpa perlu menyimpan nomor kontak.</p>
-      <form id="waForm" class="w-full flex flex-col gap-4">
-        <input type="tel" id="phone" name="phone" placeholder="Masukkan nomor WhatsApp (cth: 6281234567890)" class="border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-whatsapp transition duration-200 shadow-sm focus:shadow-lg bg-white/80 placeholder-gray-400" required pattern="[0-9]{10,15}">
-        <button type="submit" class="flex items-center justify-center gap-2 bg-gradient-to-r from-whatsapp to-whatsappDark active:scale-95 text-white font-semibold py-3 rounded-lg transition-all duration-200 text-lg shadow-md hover:shadow-lg focus:ring-2 focus:ring-whatsapp">
+      <h1 class="text-3xl font-extrabold mb-2 text-center tracking-tight bg-gradient-to-r from-whatsapp to-whatsappDark bg-clip-text text-transparent">Direct WhatsApp Chat</h1>
+      <div class="w-16 h-1 bg-gradient-to-r from-whatsapp to-whatsappDark rounded-full mb-6"></div>
+      <p class="text-gray-600 mb-7 text-center">Chat ke nomor WhatsApp tanpa perlu menyimpan nomor kontak.</p>
+      <form id="waForm" class="w-full flex flex-col gap-5">
+        <div class="relative">
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-whatsappDark">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5"><path d="M20.52 3.48A12.07 12.07 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 5.98L0 24l6.21-1.62A12.13 12.13 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.23-3.48-8.52zM12 22c-1.77 0-3.5-.46-5.01-1.33l-.36-.21-3.69.96.99-3.59-.23-.37A9.93 9.93 0 0 1 2 12C2 6.48 6.48 2 12 2c2.54 0 4.93.99 6.74 2.77A9.48 9.48 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.2-7.8c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.34.42-.51.14-.17.18-.29.28-.48.09-.19.05-.36.02-.5-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.35-.01-.54-.01-.19 0-.5-.07-.76.34-.26.27-1 1-.99 2.43.01 1.43 1.03 2.81 1.18 3 .15.19 2.03 3.1 5.01 4.22.7.24 1.25.38 1.68.49.71.18 1.36.15 1.87.09.57-.07 1.65-.67 1.89-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33z"/></svg>
+          </span>
+          <input type="tel" id="phone" name="phone" placeholder="Masukkan nomor WhatsApp (cth: 6281234567890)" class="pl-12 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-whatsapp transition duration-200 shadow-sm focus:shadow-lg bg-white/80 placeholder-gray-400 w-full" required pattern="[0-9]{10,15}">
+        </div>
+        <button type="submit" class="flex items-center justify-center gap-2 bg-gradient-to-r from-whatsapp to-whatsappDark active:scale-95 text-white font-semibold py-3 rounded-lg transition-all duration-200 text-lg shadow-md hover:shadow-xl hover:-translate-y-1 focus:ring-4 focus:ring-whatsapp/40 ring-offset-2 ring-offset-white group-hover:ring-4 group-hover:ring-whatsapp/50">
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path d="M20.52 3.48A12.07 12.07 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 5.98L0 24l6.21-1.62A12.13 12.13 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.23-3.48-8.52zM12 22c-1.77 0-3.5-.46-5.01-1.33l-.36-.21-3.69.96.99-3.59-.23-.37A9.93 9.93 0 0 1 2 12C2 6.48 6.48 2 12 2c2.54 0 4.93.99 6.74 2.77A9.48 9.48 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.2-7.8c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.34.42-.51.14-.17.18-.29.28-.48.09-.19.05-.36.02-.5-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.35-.01-.54-.01-.19 0-.5-.07-.76.34-.26.27-1 1-.99 2.43.01 1.43 1.03 2.81 1.18 3 .15.19 2.03 3.1 5.01 4.22.7.24 1.25.38 1.68.49.71.18 1.36.15 1.87.09.57-.07 1.65-.67 1.89-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33z"/></svg>
           Mulai Chat
         </button>
       </form>
       <p id="errorMsg" class="text-red-500 mt-2 hidden text-sm"></p>
-      <div class="mt-8 text-gray-400 text-xs text-center select-none flex flex-col items-center gap-1">
+      <div class="w-full border-t border-gray-200 mt-10 pt-6 text-gray-400 text-xs text-center select-none flex flex-col items-center gap-1">
         <span>&copy; 2024 Direct WhatsApp Chat.</span>
         <span class="flex items-center gap-1">
           <svg xmlns="http://www.w3.org/2000/svg" fill="#25D366" viewBox="0 0 24 24" class="w-4 h-4 inline"><path d="M20.52 3.48A12.07 12.07 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 5.98L0 24l6.21-1.62A12.13 12.13 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.23-3.48-8.52zM12 22c-1.77 0-3.5-.46-5.01-1.33l-.36-.21-3.69.96.99-3.59-.23-.37A9.93 9.93 0 0 1 2 12C2 6.48 6.48 2 12 2c2.54 0 4.93.99 6.74 2.77A9.48 9.48 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.2-7.8c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.34.42-.51.14-.17.18-.29.28-.48.09-.19.05-.36.02-.5-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.35-.01-.54-.01-.19 0-.5-.07-.76.34-.26.27-1 1-.99 2.43.01 1.43 1.03 2.81 1.18 3 .15.19 2.03 3.1 5.01 4.22.7.24 1.25.38 1.68.49.71.18 1.36.15 1.87.09.57-.07 1.65-.67 1.89-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33z"/></svg>
